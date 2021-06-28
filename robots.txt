@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /test/
+Sitemap: https:kuist-colloquium.github.io/sitemap.xml
