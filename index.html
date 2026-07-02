@@ -22,6 +22,50 @@
             <div class="container">
 
 
+<div class="card" style="width: min(90%, 1200); margin: 50px; margin-left: auto; margin-right: auto; display: block;">
+    <div class="card-body" style="overflow:hidden">
+        
+        <h2 style="border-bottom: solid; margin-bottom:20px; padding-bottom:2px; border-color:#00205B;"><b>The Geometry of Efficient Training: Co-Designing Optimizers and Systems at Scale</b></h2>
+
+        <div style="float:right; width: max(25%, 130px);">
+            <img src="./hiroki_naganuma.jpg" alt="講演者の画像" style="width:100%; padding: 0px 0px 10px 10px;">
+        </div> 
+
+        <h3 class="card-title" style="margin-bottom: 6px;">
+            <b>Hiroki Naganuma</b>
+
+            <span style="font-size: 1.25rem"><a href="https://hiroki11x.github.io">🌐</a></span>
+        </h3>
+        <h5 class="card-text" style="margin-bottom: 22px;">Incoming Research Engineer, NVIDIA / Ph.D., Université de Montréal and Mila</h5>
+
+        <details style="margin-bottom: 22px">
+            <summary>講演者経歴</summary>
+            Hiroki Naganuma is an incoming Research Engineer at NVIDIA and a Ph.D. candidate at Mila and Université de Montréal. His research lies at the intersection of machine learning, optimization, and systems, with a focus on developing efficient training algorithms for large-scale foundation models.
+            During his doctoral studies, he has worked at Meta Superintelligence Labs, Google DeepMind, and Microsoft Research, contributing to research on large-scale optimization, distributed training, and learning systems. His work aims to bridge theoretical insights in optimization with practical challenges arising in modern AI infrastructure.
+            Hiroki is a recipient of the Masason Foundation Fellowship and RBC Borealis AI Global Fellowship. He earned his B.Eng. and M.Eng. degrees in Computer Science from the Tokyo Institute of Technology, where he graduated as Valedictorian of the School of Computing.
+        </details>
+
+        <p class="card-text">
+            <b>日時</b>： 7月17日（金） 13:15-14:45
+        </p>
+
+        <p class="card-text">
+            <b>場所</b>：総合研究７号館 講義室1（1階 107）
+        </p>
+
+        <p class="card-text">
+            Training today's largest AI models is as much a systems problem as an algorithms problem: the choice of optimizer, how work is split across thousands of accelerators, and how much data is spent per step all interact, and the most efficient designs come from treating the algorithm and the system together rather than separately. In this talk I argue that the geometry of stochastic optimization is a practical language for this algorithm–systems co-design: it tells us where an optimizer's useful signal actually lives, and therefore which approximations a system can safely make to run faster. <br><br>
+
+            I begin with a motivating observation. Measuring the geometry of real training trajectories reveals a "no wrong turns" phenomenon: across architectures and optimizers, stochastic gradients stay consistently aligned with the direction to the eventual solution. This stability is what makes co-design safe — it bounds how far a system may deviate from exact computation without hurting convergence. A first payoff is on the communication side: a method we call PALSGD trades exact synchronization for cheap local corrections, cutting communication by over 90% while reaching target accuracy faster. <br><br>
+
+            The heart of the talk is the compute side — how much data each optimization step should use. The classical "gradient noise scale" predicts a critical batch size from the ratio of gradient noise to signal, but it quietly assumes plain SGD and Euclidean distance, while the optimizers behind today's largest models, such as Adam and the recent Muon, do not measure distance that way. I show that the right batch size lives in the geometry of the optimizer itself: each optimizer is steepest descent under some norm, so its noise and signal must be measured with the matching, "dual" ruler — the Euclidean norm for SGD, the ℓ1 norm for sign-based methods, and the nuclear norm for spectral methods like Muon. Crucially, the signal is co-designed with the system: instead of expensive per-example gradients, it is estimated from the per-worker gradients already exchanged across GPUs, so it rides along with communication the training stack is doing anyway. On a 320M-parameter language model trained on billions of tokens, geometry-matched adaptive batch sizes match the best fixed-batch validation loss while cutting the number of optimizer steps by up to two-thirds. <br><br>
+
+            I will close with the broader agenda this opens up: a research program on the principled co-design of optimization algorithms and the systems and hardware they run on — using geometry to decide what to compute exactly, what to approximate, and what to communicate — together with the open challenges that remain, from stateful optimizers to foundation-model scale.
+        </p>
+    </div>
+</div>
+
+
 
 <div class="card" style="width: min(90%, 1200); margin: 50px; margin-left: auto; margin-right: auto; display: block;">
     <div class="card-body" style="overflow:hidden">
