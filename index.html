@@ -92,9 +92,7 @@
         <p class="card-text">
             <b>Abstract:</b><br>
             While the Platonic Representation Hypothesis suggests that independently trained vision and language models converge toward compatible latent geometries, recovering class-level correspondences between unpaired modalities without cross-modal supervision remains a challenging task. Existing relational matching methods often compare within-modality similarity kernels directly, overlooking the fact that two encoders can capture the same underlying semantic structure while assigning very different similarity values to the same relations.
-        </p>
-
-        <p class="card-text">
+            <br>
             In this talk, I will present RankAlign, a rank-based normalization strategy for class-level unpaired vision-language matching. I will begin by examining why raw similarity kernels can misalign even when relational structure is preserved. I will then show how transforming each within-modality similarity kernel into an ordinal representation prior to permutation matching achieves invariance to strictly increasing similarity reparameterizations, while leaving the correspondence space and matching solver unchanged. Next, I will discuss our theoretical guarantees, exact recovery under strict ordinal agreement and stability under partial ordinal agreement. Finally, I will share experimental results across diverse frozen vision and language encoders, multiple datasets, domain shifts, and label corruption, highlighting both the strengths and remaining challenges of ordinal alignment.
         </p>
 
